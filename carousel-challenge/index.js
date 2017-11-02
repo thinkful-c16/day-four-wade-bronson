@@ -1,8 +1,17 @@
 'use strict';
 
-$(function() {
+function updateSelectedThumbnail() {
   $('.thumbnail').on('click', function(event) {
-    const selectedThumbnail = $(event.currentTarget).find('img');
-    $('.hero').replaceWith($(selectedThumbnail));
+    const selectedThumbnailSrc = $(event.currentTarget).find('img').attr('src');
+    const selectedThumbnailAlt = $(event.currentTarget).find('img').attr('alt');
+
+    console.log(selectedThumbnailSrc);
+
+    $('.hero img').attr('src', selectedThumbnailSrc).attr('alt', selectedThumbnailAlt);
+
   });
+}
+
+$(document).ready(function() {
+  updateSelectedThumbnail();
 });
