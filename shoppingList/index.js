@@ -1,11 +1,21 @@
 'use strict';
 
 function checkItem() {
-  const shoppingItemChecked = $('.shopping-item');
-  $('.shopping-item-toggle').on('click', function() {
-    shoppingItemChecked.addClass('shopping-item__checked');
+  const shoppingItemCheckButton = $('li .shopping-item-toggle');
+  $(shoppingItemCheckButton).on('click', function(event) {
+    $(event.currentTarget).parents('li').find('.shopping-item').addClass('shopping-item__checked');
+
   });
 }
 
 $(checkItem);
 
+function deleteItem() {
+  const shoppingItemDeleteButton = $('li .shopping-item-delete');
+  $(shoppingItemDeleteButton).on('click', function(event) {
+    $(event.currentTarget).parents('li').remove();
+  });
+
+}
+
+$(deleteItem);
