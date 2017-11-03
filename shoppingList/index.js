@@ -3,7 +3,7 @@
 function checkItem() {
   const shoppingItemCheckButton = $('li .shopping-item-toggle');
   $(shoppingItemCheckButton).on('click', function(event) {
-    $(event.currentTarget).parents('li').find('.shopping-item').addClass('shopping-item__checked');
+    $(event.currentTarget).parents('li').find('.shopping-item').toggleClass('shopping-item__checked');
 
   });
 }
@@ -32,8 +32,10 @@ function addItem() {
       </div>
     </li>`
     );
+    // solution I arrived at with Sidharth's help //
     $(checkItem);
     $(deleteItem);
+    //****************//
     console.log('I am triggering!');
     console.log(addItemInput);
     $('.js-shopping-list-entry').val('');
@@ -43,6 +45,7 @@ function addItem() {
 // // $('body').on('click', function(event) {
 //   if (event.currentTarget === $('input[name = shopping-list-entry]')
 // }
+// code we started with Alex ^//
 
 $(addItem);
 $(checkItem);
