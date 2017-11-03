@@ -2,15 +2,14 @@
 
 function checkItem() {
   const handleCheckButton = $('.shopping-list');
-  $(handleCheckButton).on('click','.shopping-item', function(event) {
+  $(handleCheckButton).on('click','.shopping-item-toggle', function(event) {
     $(event.currentTarget).parents('li').find('.shopping-item').toggleClass('shopping-item__checked');
-
   });
 }
 
 function deleteItem() {
   const handleDeleteButton = $('.shopping-list');
-  $(handleDeleteButton).on('click','.shopping-item', function(event) {
+  $(handleDeleteButton).on('click','.shopping-item-delete', function(event) {
     $(event.currentTarget).parents('li').remove();
   });
 }
