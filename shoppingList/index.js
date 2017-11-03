@@ -1,16 +1,16 @@
 'use strict';
 
 function checkItem() {
-  const shoppingItemCheckButton = $('li .shopping-item-toggle');
-  $(shoppingItemCheckButton).on('click', function(event) {
+  const handleCheckButton = $('.shopping-list');
+  $(handleCheckButton).on('click','.shopping-item', function(event) {
     $(event.currentTarget).parents('li').find('.shopping-item').toggleClass('shopping-item__checked');
 
   });
 }
 
 function deleteItem() {
-  const shoppingItemDeleteButton = $('li .shopping-item-delete');
-  $(shoppingItemDeleteButton).on('click', function(event) {
+  const handleDeleteButton = $('.shopping-list');
+  $(handleDeleteButton).on('click','.shopping-item', function(event) {
     $(event.currentTarget).parents('li').remove();
   });
 }
@@ -33,8 +33,8 @@ function addItem() {
     </li>`
     );
     // solution I arrived at with Sidharth's help //
-    $(checkItem);
-    $(deleteItem);
+    // $(checkItem);
+    // $(deleteItem);
     //****************//
     console.log('I am triggering!');
     console.log(addItemInput);
